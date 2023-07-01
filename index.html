@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Media Controls</title>
+    <style>
+        html{
+            --button-size: 200px;
+        }
+        button{
+            width:var(--button-size);
+            height:var(--button-size);
+        }
+        .cont{
+            margin: auto;
+        }
+    </style>
+</head>
+<script>
+    function httpGet(theUrl)
+    {
+        var xmlHttp = new XMLHttpRequest();
+        xmlHttp.open( "GET", theUrl, true );
+        xmlHttp.send("bananana")
+        return xmlHttp.responseText;
+    }
+    function prev(){
+        httpGet("http://DESKTOP-HK3V6H8.local:6541/prev")
+    }
+    function pp(){
+        httpGet("http://DESKTOP-HK3V6H8.local:6541/plause")
+    }
+    function next(){
+        httpGet("http://DESKTOP-HK3V6H8.local:6541/next")
+    }
+</script>
+<body>
+    <div class="cont">
+        <button id="p" onclick="prev()">Previous</button>
+        <button id="pp" onclick="pp()">Play/Pause</button>
+        <button id="n" onclick="next()">Next</button>
+    </div>
+</body>
+</html>
